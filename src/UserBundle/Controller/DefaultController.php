@@ -17,7 +17,6 @@ class DefaultController extends Controller
     public function addAction(Request $request){
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
-
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) { 
            $doct = $this->getDoctrine()->getManager();
