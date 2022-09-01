@@ -1,0 +1,21 @@
+UserBundle\Entity\Droit:
+    type: entity
+    table: null
+    repositoryClass: UserBundle\Repository\DroitRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        droit:
+            type: string
+            length: 255
+        idUser:
+            type: integer
+            column: id_user
+        type_droit:
+            type: string
+            lenght: 45
+    lifecycleCallbacks: {  }
