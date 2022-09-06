@@ -3,5 +3,14 @@ user_homepage:
     defaults: { _controller: UserBundle:Default:index }
 
 add_user:
-    path: /adduser
+    path: /ajouter
     defaults: { _controller: UserBundle:Default:add}
+delete_user:
+    path: /supprimer/{id}
+    defaults: { _controller: UserBundle:Default:delete}
+liste_usr:
+    path: /liste
+    defaults: { _controller: UserBundle:Default:show}
+modifier_usr:
+    path: /modifier/{id}
+    defaults: { _controller: UserBundle:Default:update}
