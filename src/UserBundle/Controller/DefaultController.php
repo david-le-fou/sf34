@@ -28,7 +28,7 @@ class DefaultController extends Controller
         }
 
         $formView = $form->createView();
-        return $this->render('@User/adduser.html.twig',array('form'=>$formView));
+        return $this->render('@User/adduser.html.twig',array('edit_form'=>$formView));
     }
     public function showAction(){
         $doctrine = $this->getDoctrine()->getManager();
@@ -45,7 +45,27 @@ class DefaultController extends Controller
         $manager->flush($id);
             return $this->redirectToRoute('liste_usr');
     }
-    public function updateAction($id){
-        return new Response('mise à jour ');
+    public function updateAction(Request $request, $id){
+        $doctrine = $this->getDoctrine();
+        $manager = $doctrine->getManager();
+        $repository = $manager->getRepository('UserBundle:User');
+        $data = $repository->findOneBy(array('id'=>$id));
+
+        $user = new User();
+        $form = $this->createForm(UserType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) { 
+            $post = $_POST['userbundle_user'];
+            $data->setNom($post['nom']);
+            $data->setLogin($post['login']);
+            $data->setPass($post['pass']);
+           
+            $manager->flush();
+            return $this->redirectToRoute('liste_usr');
+        }
+
+        $formView = $form->createView();
+        return $this->render('@User/edit.html.twig',array('form'=>$formView,'user'=>$data));
     }
 }

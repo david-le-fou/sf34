@@ -7,14 +7,16 @@
 </head>
 
 <body>
-    {% block body %}
-    <div class='d-flex flex-column align-items-center'>
+    <form action="#" method="post" autocomplete="off" class='d-flex flex-column align-items-center'>
         <h1> Ajouter utilisateur</h1>
-        {{ form_start(form) }}
-        {{ form_widget(form)}}
-        <input type='submit' value='Ajouter' class="btn btn-primary d-flex ajouter"/>
-        {{ form_end(form) }}
-    </div>
-    {% endblock %}
+        {{ form_start(edit_form) }}
+            {{ form_row(edit_form.nom) }}
+            {{ form_row(edit_form.login) }}
+            {{ form_row(edit_form.pass) }}
+            <input type='submit' value='Ajouter' class="btn btn-primary d-flex ajouter"/>
+            <a href="{{path('liste_usr')}}" class="  d-flex btn btn-secondary">Liste</a>
+        {{ form_end(edit_form) }}
+
+    </form>
 </body>
 </html>
