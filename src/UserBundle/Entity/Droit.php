@@ -98,5 +98,28 @@ class Droit
     public function setType_droit($type_droit){
         $this->type_droit = $type_droit;
     }
-}
 
+    /**
+     * Set typeDroit
+     *
+     * @param string $typeDroit
+     *
+     * @return Droit
+     */
+    public function setTypeDroit($typeDroit)
+    {
+        $this->type_droit = $typeDroit;
+
+        return $this;
+    }
+
+    /**
+     * Get typeDroit
+     *
+     * @return string
+     */
+    public function getTypeDroit()
+    {
+        return $this->type_droit;
+    }
+}

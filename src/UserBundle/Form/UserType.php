@@ -18,6 +18,7 @@ class UserType extends AbstractType
         $builder->add('nom')
                 ->add('login')
                 ->add('pass')
+                ->add('adress')
             ;
     }/**
      * {@inheritdoc}

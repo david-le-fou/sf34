@@ -60,6 +60,7 @@ class DefaultController extends Controller
             $data->setNom($post['nom']);
             $data->setLogin($post['login']);
             $data->setPass($post['pass']);
+            $data->setAdress($post['adress']);
            
             $manager->flush();
             return $this->redirectToRoute('liste_usr');

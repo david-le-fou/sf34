@@ -18,6 +18,7 @@
                 <th> Nom </th>
                 <th> Login </th>
                 <th> Mot de Pass</th>
+                <th> adress</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -27,6 +28,7 @@
                 <td>{{key.nom}}</td>
                 <td>{{key.login}}</td>
                 <td>{{key.pass}}</td>
+                <td>{{key.adress}}</td>
                 <td><a href="{{path('delete_user',{'id':key.id})}}" class="btn btn-Danger">Supprimer</a>
                 <a href="{{path('modifier_usr',{'id':key.id})}}" class="btn btn-secondary">Modifier</a></td>
             </tr>

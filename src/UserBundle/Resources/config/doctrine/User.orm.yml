@@ -18,4 +18,7 @@ UserBundle\Entity\User:
         pass:
             type: string
             length: 255
+        adress:
+            type: string
+            length: 255
     lifecycleCallbacks: {  }

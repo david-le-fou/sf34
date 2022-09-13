@@ -27,6 +27,10 @@ class User
      */
     private $pass;
 
+     /**
+     * @var string
+     */
+    private $adress;
 
     /**
      * Get id
@@ -109,5 +113,28 @@ class User
     {
         return $this->pass;
     }
-}
 
+    /**
+     * Set adress
+     *
+     * @param string $adress
+     *
+     * @return User
+     */
+    public function setAdress($adress)
+    {
+        $this->adress = $adress;
+
+        return $this;
+    }
+
+    /**
+     * Get adress
+     *
+     * @return string
+     */
+    public function getAdress()
+    {
+        return $this->adress;
+    }
+}
