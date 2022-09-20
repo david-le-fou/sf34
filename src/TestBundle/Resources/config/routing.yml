@@ -1,0 +1,12 @@
+test_homepage:
+    path:     /
+    defaults: { _controller: TestBundle:Default:index }
+manytoone:
+    path:   /many_one
+    defaults: { _controller: TestBundle:Default:Manytoone}
+manytoone2:
+    path:   /many_one2
+    defaults: { _controller: TestBundle:Default:Manytoone2}
+manytoone3:
+    path:   /many_one3
+    defaults: { _controller: TestBundle:Default:Manytoone3}
