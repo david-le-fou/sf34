@@ -10,3 +10,7 @@ manytoone2:
 manytoone3:
     path:   /many_one3
     defaults: { _controller: TestBundle:Default:Manytoone3}
+Manytomany:
+    path:   /manytomany
+    defaults: { _controller: TestBundle:Default:Manytomany}
+

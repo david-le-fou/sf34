@@ -85,4 +85,19 @@ class DefaultController extends Controller
 
         return $this->render('@Test/Default/index.html.twig');
     }
+    public function ManytomanyAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $t6 = $em->getRepository('TestBundle:table6')->findOneBy(['id'=>1]);
+
+        $t5 = $em ->getRepository('TestBundle:table5')->findAll();
+
+        foreach($t5 as $_t6){
+            $t6->addIdT5($_t6);
+        }
+        
+        $em->flush();
+        return $this->render('@Test/Default/index.html.twig');
+
+    }
 }
